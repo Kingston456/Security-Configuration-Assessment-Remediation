@@ -2,7 +2,7 @@
 
 ### 📋 Project Overview
 
-This Homelab demonstrates Security Configuration Assessment and remediation using CIS Benchmarks. Using wazuh and command-line remediation, I improved the SCA compliance score from 46% to 55%.
+This Homelab demonstrates Security Configuration Assessment and remediation using CIS Benchmarks. Using wazuh and command-line remediation, I improved the SCA compliance score from 46% to 56%.
 
 ### Lab Environment:
 
