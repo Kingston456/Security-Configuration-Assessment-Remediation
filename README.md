@@ -53,4 +53,4 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 
 ### 🔍Findings
 
-- **Finding 1- (19582)
+- **Finding 1- (19582) Ensure packet redirect sendi
