@@ -21,7 +21,7 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 
 **1. Deployed Wazuh SIEM** as a dedicated VM (172.16.0.10) within the homelab environment.
 
-**2. Established an SSH** session to Metasploitable 3 from Windows 11 Command-Line Terminal.
+**2. Established an SSH** session to Metasploitable 3 (172.16.0.12) from Windows 11 Command-Line Terminal.
 
 **3. Researched and applied** remediation steps for each SCA finding" 
 
@@ -52,3 +52,5 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 🟣 **TOTAL SCORE**- 56%
 
 ### 🔍Findings
+
+- **Finding 1- (19582)
