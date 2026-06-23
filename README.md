@@ -100,6 +100,13 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 <img width="621" height="502" alt="19579 Telnet pass" src="https://github.com/user-attachments/assets/e6a3becd-448a-49d5-b35c-d4f77b813bb4" />
 
 
+- **Finding 4- 19582 & 19583: Ensure packet redirect sending is disabled & Ensure source routed packets are not accepted**
+
+- **Status:** Remediated ✅
+
+- **Issue:**
+
+
 
 
 
