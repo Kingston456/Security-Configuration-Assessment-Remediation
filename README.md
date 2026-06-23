@@ -57,4 +57,52 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 
 ### 🔍Sample Findings
 
-- **Finding 1: 19557 — Ensure time synchronization is in use**
+- **Finding 1- 19557: Ensure time synchronization is in use**
+
+- **Status:** Remediated ✅
+
+- **Issue:** No NTP or chrony service was installed, meaning the system had no mechanism for synchronized timekeeping.
+
+- **Action Taken:** Installed NTP using apt-get on virtual machine.
+<img width="608" height="500" alt="19557 NTP fail" src="https://github.com/user-attachments/assets/14607446-bb85-47cd-b270-44b96b63b466" />
+
+<img width="959" height="599" alt="19557 NTP remediation" src="https://github.com/user-attachments/assets/056db44c-7b68-48a2-8036-11693666fc1a" />
+
+<img width="607" height="500" alt="19557 NTP pass" src="https://github.com/user-attachments/assets/18c4e5fc-1598-441e-b312-d9a6ea08b12d" />
+
+
+- **Finding 2- 19522 & 19523: Make sure AIDE is Installed & Ensure filesystem integrity is regularly checked**
+
+- **Status:** Remediated ✅
+
+- **Issue:** No File Integrity Monitoring tools was installed, meaning the system had no way of checking if critical files have been altered without authorization.
+
+- **Action Taken:** Installed & initialized AIDE. Verified the check ran clean against the baseline using aide.wrapper --check.  Scheduled automated daily integrity checks via root's crontab (0 5 * * * /usr/bin/aide.wrapper --config /etc/aide/aide.conf --check).
+
+<img width="959" height="599" alt="19522 AIDE remediation" src="https://github.com/user-attachments/assets/7b8f2f8c-bc97-45a5-b54b-19bc7c5ec332" />
+
+<img width="605" height="455" alt="19522 AIDE pass" src="https://github.com/user-attachments/assets/41d3af41-43e3-46b0-a4b8-6e19090c4d6d" />
+
+<img width="611" height="502" alt="19523 AIDE pass" src="https://github.com/user-attachments/assets/ec9c907b-32fb-49a2-9349-c40ae71cfd18" />
+
+- **Finding 3- 19579: Ensure telnet client is not installed**
+
+- **Status:** Remediated ✅
+  
+- **Issue:** The system is running the Telnet protocol which is an insecure and unencrypted protocol.
+
+- **Action Taken:** Uninstalled Telnet using apt-get remove Telnet on Virtual Machine.
+
+<img width="617" height="503" alt="19579 Telnet failed" src="https://github.com/user-attachments/assets/85ce8acf-c10d-4413-9a39-508ddb4c9c2a" />
+
+<img width="959" height="599" alt="19579 Telnet uninstalled" src="https://github.com/user-attachments/assets/db568513-03b6-4241-9f2d-afc695a3c6dd" />
+
+<img width="621" height="502" alt="19579 Telnet pass" src="https://github.com/user-attachments/assets/e6a3becd-448a-49d5-b35c-d4f77b813bb4" />
+
+
+
+
+
+
+
+
