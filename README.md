@@ -41,6 +41,8 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 
 🟣 **TOTAL SCORE**- 46%
 
+<img width="959" height="599" alt="SCA 46%" src="https://github.com/user-attachments/assets/74ed569d-35f9-49d3-a633-4debea283813" />
+
 ### SECOND SCAN
 
 🟢 **PASSED**- 85
@@ -51,6 +53,8 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 
 🟣 **TOTAL SCORE**- 56%
 
-### 🔍Findings
+<img width="959" height="599" alt="SCA score 56%" src="https://github.com/user-attachments/assets/34e4ce52-f31e-499f-8f0e-91881b6fe914" />
 
-- **Finding 1- (19582) Ensure packet redirect sendi
+### 🔍Sample Findings
+
+- **Finding 1: 19557 — Ensure time synchronization is in use**
