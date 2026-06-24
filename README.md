@@ -104,7 +104,9 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 
 - **Status:** Remediated ✅
 
-- **Issue:**
+- **Issue:** The system has souce routing and packet redirect enabled. If not disabled an attacker can write their own path inside a packet (using a spoofed source address) and send it toward a private address.
+
+- **Action Taken:** 
 
 
 
