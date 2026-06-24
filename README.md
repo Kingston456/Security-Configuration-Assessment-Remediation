@@ -120,7 +120,15 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 
 - **Issue:** The system does not have this feature enabled. Without (log_martians) active, the system would not be able to log any evidence of unroutable or spoofed source addresses. This would leave no evidence for an administrator to investigate if an attacker was trying to probe the system.
 
-- **Action Taken:**
+- **Action Taken:** Enabled log_martians by adding (sudo sysctl -w net.ipv4.conf.all.log_martians=1, sudo sysctl -w net.ipv4.conf.default.log_martians=1) to (/etc/sysctl.conf) and flushed out the system's routing cache with (sudo sysctl -w net.ipv4.route.flush=1).
+
+<img width="614" height="499" alt="19586 fail" src="https://github.com/user-attachments/assets/cefb5d32-ef73-43bf-8505-95c37291cf07" />
+
+<img width="959" height="599" alt="19586 remediation" src="https://github.com/user-attachments/assets/c8a87865-2540-465e-ac2c-09432b26a788" />
+
+<img width="616" height="503" alt="19586 pass" src="https://github.com/user-attachments/assets/8b4f5704-0483-461c-bffe-946417594686" />
+
+
 
 
 
