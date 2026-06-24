@@ -77,7 +77,7 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 
 - **Issue:** No File Integrity Monitoring tools was installed, meaning the system had no way of checking if critical files have been altered without authorization.
 
-- **Action Taken:** Installed & initialized AIDE. Verified the check ran clean against the baseline using aide.wrapper --check.  Scheduled automated daily integrity checks via root's crontab (0 5 * * * /usr/bin/aide.wrapper --config /etc/aide/aide.conf --check).
+- **Action Taken:** Installed & initialized AIDE. I then Verified the check ran clean against the baseline using aide.wrapper --check. Scheduled automated daily integrity checks via root's crontab (0 5 * * * /usr/bin/aide.wrapper --config /etc/aide/aide.conf --check).
 
 <img width="959" height="599" alt="19522 AIDE remediation" src="https://github.com/user-attachments/assets/7b8f2f8c-bc97-45a5-b54b-19bc7c5ec332" />
 
@@ -89,7 +89,7 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 
 - **Status:** Remediated ✅
   
-- **Issue:** The system is running the Telnet protocol which is an insecure and unencrypted protocol.
+- **Issue:** The system is running the Telnet protocol, which is an insecure and unencrypted protocol.
 
 - **Action Taken:** Uninstalled Telnet using apt-get remove Telnet on Virtual Machine.
 
@@ -100,13 +100,29 @@ This Homelab demonstrates Security Configuration Assessment and remediation usin
 <img width="621" height="502" alt="19579 Telnet pass" src="https://github.com/user-attachments/assets/e6a3becd-448a-49d5-b35c-d4f77b813bb4" />
 
 
-- **Finding 4- 19582 & 19583: Ensure packet redirect sending is disabled & Ensure source routed packets are not accepted**
+- **Finding 4- 19582 & 19583: Ensure ICMP redirect message sending is disabled & Ensure source routed packets are not accepted**
 
 - **Status:** Remediated ✅
 
-- **Issue:** The system has souce routing and packet redirect enabled. If not disabled an attacker can write their own path inside a packet (using a spoofed source address) and send it toward a private address.
+- **Issue:** The system has souce routing and ICMP redirect messages enable. If source routing is not disabled an attacker can write their own path inside a packet (using a spoofed source address) and send it toward a private address. If ICMP redirect is not disabled an attacker can send out malicious ICMP redirect messages to devices on a network, tricking them into rerouting their traffic through a path the attacker controls.
 
-- **Action Taken:** 
+- **Action Taken:** Disabled source routing (net.ipv4.conf.all.accept_source_route = 0, net.ipv4.conf.default.accept_source_route = 0) and disabled ICMP redirect sending (net.ipv4.conf.all.send_redirects = 0) — by adding both parameters to /etc/sysctl.conf, applying them immediately via sysctl -w, and flushing the routing table with sysctl -w net.ipv4.route.flush=1.
+
+  <img width="623" height="509" alt="19582   19583 fail" src="https://github.com/user-attachments/assets/9d50d3c7-4684-4d73-b9f7-cb92da97bc61" />
+
+<img width="959" height="599" alt="19582   19583 remediation" src="https://github.com/user-attachments/assets/bd18d18b-4e17-4e6c-9551-909e57a02f51" />
+
+<img width="610" height="479" alt="19582   19583 pass" src="https://github.com/user-attachments/assets/4f39771b-2dac-4858-bee9-da007521e7a4" />
+
+- **Finding 5- Ensure suspicios packets are logged**
+
+- **Status:** Remediated ✅
+
+- **Issue:** The system does not have this feature enabled. Without (log_martians) active, the system would not be able to log any evidence of unroutable or spoofed source addresses. This would leave no evidence for an administrator to investigate if an attacker was trying to probe the system.
+
+- **Action Taken:**
+
+
 
 
 
